@@ -1,0 +1,7 @@
+node_modules/
+dist/
+outputs/xlsx-build-*/
+vite-dev.out.log
+vite-dev.err.log
+.env
+.env.local
