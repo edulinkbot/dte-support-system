@@ -1,6 +1,7 @@
 import { navItems } from '../components/Nav.jsx';
 import { Card, StatCard } from '../components/Card.jsx';
 import { advisors, courses, facultyMembers, feedback, riskStudents, studentCohorts, students } from '../data/mockData.js';
+import { assetPath } from '../utils/assets.js';
 
 export default function Home({ onNavigate }) {
   const chairman = facultyMembers.find((teacher) => teacher.chair);
@@ -31,7 +32,7 @@ export default function Home({ onNavigate }) {
         </div>
         <div className="hero-dashboard" aria-hidden="true">
           <div className="hero-brand">
-            <img src="/logoDTE.jpg" alt="" />
+            <img src={assetPath('/logoDTE.jpg')} alt="" />
             <div>
               <span>Digital Technology for Education</span>
               <strong>DTE</strong>

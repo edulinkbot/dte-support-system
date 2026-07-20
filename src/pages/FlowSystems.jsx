@@ -1,5 +1,6 @@
 import Flow from '../components/Flow.jsx';
 import { Badge, Card } from '../components/Card.jsx';
+import { assetPath } from '../utils/assets.js';
 
 const analyzedFlows = [
   {
@@ -113,8 +114,8 @@ export default function FlowSystems() {
       <Card title="ภาพ Flow ต้นฉบับจากโฟลเดอร์ flow">
         <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
           {sourceImages.map(([title, src]) => (
-            <a key={src} href={src} target="_blank" rel="noreferrer" className="rounded-md border border-slate-200 bg-slate-50 p-3 transition hover:border-brand-blue hover:bg-white">
-              <img className="flow-reference-image" src={src} alt={title} />
+            <a key={src} href={assetPath(src)} target="_blank" rel="noreferrer" className="rounded-md border border-slate-200 bg-slate-50 p-3 transition hover:border-brand-blue hover:bg-white">
+              <img className="flow-reference-image" src={assetPath(src)} alt={title} />
               <p className="mt-3 text-sm font-bold text-brand-navy">{title}</p>
             </a>
           ))}
