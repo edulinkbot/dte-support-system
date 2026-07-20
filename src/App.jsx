@@ -16,6 +16,7 @@ import Feedback from './pages/Feedback.jsx';
 import QADashboard from './pages/QADashboard.jsx';
 import AUNGuide from './pages/AUNGuide.jsx';
 import FlowSystems from './pages/FlowSystems.jsx';
+import Projects from './pages/Projects.jsx';
 import { requests } from './data/mockData.js';
 
 const pages = {
@@ -31,6 +32,7 @@ const pages = {
   practicum: Practicum,
   resources: Resources,
   feedback: Feedback,
+  projects: Projects,
   qa: QADashboard,
   aun: AUNGuide,
   flows: FlowSystems,

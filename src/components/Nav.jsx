@@ -1,4 +1,4 @@
-import { BarChart3, BookOpen, CalendarDays, ClipboardCheck, FileText, GitBranch, Home, LifeBuoy, MessageSquare, ShieldAlert, Sparkles, UserCheck, UserRound, UsersRound, Wrench } from 'lucide-react';
+import { BarChart3, BookOpen, CalendarDays, ClipboardCheck, FileText, FolderKanban, GitBranch, Home, LifeBuoy, MessageSquare, ShieldAlert, Sparkles, UserCheck, UserRound, UsersRound, Wrench } from 'lucide-react';
 
 export const navItems = [
   ['home', 'Home', Home],
@@ -13,6 +13,7 @@ export const navItems = [
   ['practicum', 'ฝึกประสบการณ์', LifeBuoy],
   ['resources', 'สิ่งสนับสนุน', Wrench],
   ['feedback', 'ประเมิน/ข้อเสนอแนะ', MessageSquare],
+  ['projects', 'โครงการ/กิจกรรม', FolderKanban],
   ['qa', 'QA Dashboard', BarChart3],
   ['aun', 'AUN-QA Guide', Sparkles],
   ['flows', 'Flow Systems', GitBranch],
