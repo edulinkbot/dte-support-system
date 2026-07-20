@@ -83,7 +83,8 @@ export default function Projects() {
   const allProjects = [...projectArchive, ...uploadedProjects];
 
   const years = useMemo(() => ['ทั้งหมด', ...Array.from(new Set(allProjects.map((project) => project.fiscalYear))).sort().reverse()], [allProjects]);
-  const budgetTypes = ['ทั้งหมด', 'งบ บกศ.', 'งบแผ่นดิน'];
+  const budgetTypes = useMemo(() => ['ทั้งหมด', ...Array.from(new Set(allProjects.map((project) => project.budgetType)))], [allProjects]);
+  const categories = useMemo(() => Array.from(new Set(allProjects.map((project) => project.category).filter(Boolean))), [allProjects]);
   const filteredProjects = allProjects.filter((project) => (
     (budgetFilter === 'ทั้งหมด' || project.budgetType === budgetFilter)
     && (yearFilter === 'ทั้งหมด' || project.fiscalYear === yearFilter)
@@ -119,8 +120,8 @@ export default function Projects() {
 
       <section className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
         <StatCard label="โครงการทั้งหมด" value={allProjects.length} detail="รวมจากโฟลเดอร์ปีงบ 2569 และที่เพิ่มเอง" />
-        <StatCard label="งบ บกศ." value={summaryByBudget[0].count} detail="โครงการจากงบรายได้/บกศ." tone="green" />
-        <StatCard label="งบแผ่นดิน" value={summaryByBudget[1].count} detail="โครงการจากงบประมาณแผ่นดิน" tone="amber" />
+        <StatCard label={summaryByBudget[0]?.budgetType || 'งบประมาณ'} value={summaryByBudget[0]?.count || 0} detail="โครงการ/กิจกรรมจากโฟลเดอร์ dteproject" tone="green" />
+        <StatCard label="หมวดงาน" value={categories.length} detail="แยกตามโฟลเดอร์หลักใต้ งบ บกศ.69" tone="amber" />
         <StatCard label="ปีงบประมาณ" value={years.length - 1} detail="แยกดูย้อนหลังได้ตามปี" tone="rose" />
       </section>
 
